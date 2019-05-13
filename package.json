@@ -15,7 +15,6 @@
     "express-handlebars": "^3.0.2",
     "stripe": "^6.31.1"
   },
-
   "devDependencies": {
     "@babel/cli": "^7.2.0",
     "@babel/core": "^7.2.2",
@@ -25,9 +24,10 @@
     "@babel/register": "^7.0.0",
     "babel-plugin-istanbul": "^5.1.0",
     "cross-env": "^5.2.0",
-    "eslint": "^5.9.0",
+    "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.17.2",
+    "nodemon": "^1.18.9"
   },
   "engines": {
     "node": "10.14.2"
@@ -35,21 +35,5 @@
   "nodemonConfig": {
     "restartable": "rs",
     "delay": "2500"
-  },
-  "nyc": {
-    "check-coverage": true,
-    "per-file": true,
-    "lines": 50,
-    "statements": 50,
-    "functions": 50,
-    "branches": 50,
-    "require": [
-      "@babel/register"
-    ],
-    "reporter": [
-      "text-summary"
-    ],
-    "sourceMap": false,
-    "instrument": true
   }
 }
