@@ -4,7 +4,8 @@
   "description": "App to sell ebook",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "dev": "nodemon app.js --exec babel-node",
+    "lint": "eslint **/*.js"
   },
   "author": "Emmanuel",
   "license": "ISC",
@@ -13,5 +14,42 @@
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
     "stripe": "^6.31.1"
+  },
+
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/register": "^7.0.0",
+    "babel-plugin-istanbul": "^5.1.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "engines": {
+    "node": "10.14.2"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": "2500"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "per-file": true,
+    "lines": 50,
+    "statements": 50,
+    "functions": 50,
+    "branches": 50,
+    "require": [
+      "@babel/register"
+    ],
+    "reporter": [
+      "text-summary"
+    ],
+    "sourceMap": false,
+    "instrument": true
   }
 }
