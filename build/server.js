@@ -48,4 +48,4 @@ var port = process.env.PORT || 8080; // set server to listen on corresponding po
 app.listen(port, function () {
   console.log("Server started on port ".concat(port));
 }); // eslint-disable-line no-console
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=server.js.map
