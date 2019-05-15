@@ -1,6 +1,5 @@
-import Stripe from 'stripe';
-
-const stripe = Stripe('sk_test_uIqCbzlQpxpJSRU1BD3clJ2m00qicSok3M');
+const keys = require('../../config/keys');
+const stripe = require('stripe')(keys.stripeSecretKey);
 
 class ChargeController {
   chargeCustomers(req, res) {
@@ -19,9 +18,6 @@ class ChargeController {
       .then(charge => res.render('success'));
   }
 
-  getSuccessPage(req, res) {
-    res.render('success');
-  }
 }
 
 const ChargesController = new ChargeController();
