@@ -29,7 +29,7 @@ app.use(_bodyParser["default"].urlencoded({
   extended: false
 })); // set static folder
 
-app.use(_express["default"]["static"](_path["default"].join(__dirname, './public/'))); // set index route
+app.use(_express["default"]["static"](_path["default"].join(__dirname, '/public/'))); // set index route
 // @route   /
 // @desc     Get Home page
 // @access   Public
