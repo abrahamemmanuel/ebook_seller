@@ -19,6 +19,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, './public/')));
 
 // set index route
+// @route   /
+// @desc     Get Home page
+// @access   Public
+// @method   GET
 app.get('/', (req, res) => { res.render('index'); });
 
 // set server to use router
@@ -29,5 +33,3 @@ const port = process.env.PORT || 8080;
 
 // set server to listen on corresponding port
 app.listen(port, () => { console.log(`Server started on port ${port}`); }); // eslint-disable-line no-console
-
-

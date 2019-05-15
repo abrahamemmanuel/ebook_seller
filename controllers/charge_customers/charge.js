@@ -18,6 +18,10 @@ class ChargeController {
       }))
       .then(charge => res.render('success'));
   }
+
+  getSuccessPage(req, res) {
+    res.render('success');
+  }
 }
 
 const ChargesController = new ChargeController();
