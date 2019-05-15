@@ -4,6 +4,9 @@ import path from 'path';
 import exhbs from 'express-handlebars';
 import router from './api/charge';
 
+const keys = require('./config/keys');
+const stripe = require('stripe')(keys.stripeSecretKey);
+
 // create server
 const app = express();
 
@@ -23,7 +26,7 @@ app.use(express.static(path.join(__dirname, './public/')));
 // @desc     Get Home page
 // @access   Public
 // @method   GET
-app.get('/', (req, res) => { res.render('index'); });
+app.get('/', (req, res) => { res.render('index', { stripePublishableKey: keys.stripePublishableKey }); });
 
 // set server to use router
 app.use(router);
