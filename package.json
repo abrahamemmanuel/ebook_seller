@@ -4,7 +4,6 @@
   "description": "App to sell ebook",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon ./build/app.js --exec babel-node",
     "heroku-postbuild": "npm install",
     "lint": "eslint **/*.js",
     "clean": "rm -rf build && mkdir build",
